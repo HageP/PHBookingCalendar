@@ -19,7 +19,7 @@
 			header: {
 				left: 'today prev,next',
 				center: 'title',
-				right: 'timelineThreeDays,agendaWeek,month'
+				right: 'timelineThreeDays,timelineMonth'
 			},
 			defaultView: 'timelineMonth',
 			views: {
@@ -33,34 +33,34 @@
 
 			resources: [
 
-      	{ "id": "1", "title": "Asteria", "children": [
-      		{ "id": "2", "title": "Asteria 312" },
-      		{ "id": "3", "title": "Asteria 502"},
-      		{ "id": "4", "title": "Asteria 514"},
-      		{ "id": "5", "title": "Asteria 811"},
-      		{ "id": "6", "title": "Asteria 903"},
-      		{ "id": "7", "title": "Asteria 1109"},
+      	{ "id": "0", "title": "Asteria", "children": [
+      		{ "id": "1", "title": "Asteria 312" },
+      		{ "id": "2", "title": "Asteria 502"},
+      		{ "id": "3", "title": "Asteria 514"},
+      		{ "id": "4", "title": "Asteria 811"},
+      		{ "id": "5", "title": "Asteria 903"},
+      		{ "id": "6", "title": "Asteria 1109"},
       	] },
-      	{ "id": "8",  "title": "Vesta", "children": [
-      	{ "id": "9",  "title": "Vesta 402", "eventColor": "red" },
-      	{ "id": "10", "title": "Vesta 403" },
-      	{ "id": "11", "title": "Vesta 406" },
-      	{ "id": "12", "title": "Vesta 502" },
-      	{ "id": "13", "title": "Vesta 506" },
-      	{ "id": "14", "title": "Vesta 507" },
-      	{ "id": "15", "title": "Vesta 602" },
-      	{ "id": "16", "title": "Vesta 604" },
-				{ "id": "17", "title": "Vesta 607" },
-      	{ "id": "18", "title": "Vesta 706" },
-      	{ "id": "19", "title": "Vesta 803" },
+      	{ "id": "7",  "title": "Vesta", "children": [
+      	{ "id": "8",  "title": "Vesta 402", "eventColor": "red" },
+      	{ "id": "9", "title": "Vesta 403" },
+      	{ "id": "10", "title": "Vesta 406" },
+      	{ "id": "11", "title": "Vesta 502" },
+      	{ "id": "12", "title": "Vesta 506" },
+      	{ "id": "13", "title": "Vesta 507" },
+      	{ "id": "14", "title": "Vesta 602" },
+      	{ "id": "15", "title": "Vesta 604" },
+				{ "id": "16", "title": "Vesta 607" },
+      	{ "id": "17", "title": "Vesta 706" },
+      	{ "id": "18", "title": "Vesta 803" },
 
       ] },
-		{ "id": "20", "title": "1330", "children": [
-			{ "id": "21", "title": "1330 908" },
+		{ "id": "19", "title": "1330", "children": [
+			{ "id": "20", "title": "1330 908" },
 
 		]},
-		{ "id": "22", "title": "Garrison Square", "children": [
-			{ "id": "21", "title": "Garrison 305" },
+		{ "id": "21", "title": "Garrison Square", "children": [
+			{ "id": "22", "title": "Garrison 305" },
 
 		]}],
 
@@ -169,9 +169,9 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
-        <td><%= event.resourceId %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
+        <td><%= event.apartment.apartment_name %></td>
+        <td><%= event.start_time.to_date %></td>
+        <td><%= event.end_time.to_date %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -22,16 +22,16 @@
 
 
       <!-- Label and input for apartment_id -->
-      <div class="form-group">
+      <div class="form-group" hidden="true">
         <label for="apartment_id" class="control-label">
           Apartment
         </label>
 
-        <input type="text" id="event" name="event" placeholder="event" class="form-control" value="12">
+        <input type="text" id="event" name="event" placeholder="event" class="form-control" value="0">
       </div>
 
       <!-- Label and input for tenant_id -->
-      <div class="form-group">
+      <div class="form-group" hidden="true">
         <label for="tenant_id" class="control-label">
           Tenant
         </label>
@@ -40,13 +40,6 @@
       </div>
 
       <!-- Label and input for status_id -->
-      <div class="form-group">
-        <label for="status_id" class="control-label">
-          Status
-        </label>
-
-        <%= select_tag(:status_id, options_from_collection_for_select(Status.all, :id, :status_name, @event.status_id), :class => "form-control") %>
-      </div>
 
 
       <!-- Label and input for title -->
@@ -55,7 +48,7 @@
           Tenant Name
         </label>
 
-        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @event.title %>">
+        <input type="text" id="title" name="title" placeholder="Full Name" class="form-control" value="<%= @event.title %>">
       </div>
 
 

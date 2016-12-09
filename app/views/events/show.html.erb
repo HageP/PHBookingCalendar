@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <div class="page-header">
   <h3>Event #<%= @event.id %></h3>
 </div>
@@ -5,59 +7,18 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Day of week</dt>
-      <dd><%= @event.day_of_week %></dd>
-
-      <dt>Apartment</dt>
-      <dd>
-        <% if @event.apartment.present? %>
-          <a href="/apartments/<%= @event.apartment_id %>">
-            <%= @event.apartment.apartment_name %>
-          </a>
-        <% end %>
-      </dd>
 
       <dt>Tenant</dt>
-      <dd>
-        <% if @event.tenant.present? %>
-          <a href="/tenants/<%= @event.tenant_id %>">
-            <%= @event.tenant.tenant_name %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>Status</dt>
-      <dd>
-        <% if @event.status.present? %>
-          <a href="/statuses/<%= @event.status_id %>">
-            <%= @event.status.status_name %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>Lease</dt>
-      <dd>
-        <% if @event.lease.present? %>
-          <a href="/leases/<%= @event.lease_id %>">
-            <%= @event.lease.lease_start %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>Title</dt>
       <dd><%= @event.title %></dd>
 
-      <dt>Description</dt>
-      <dd><%= @event.description %></dd>
-
       <dt>Start time</dt>
-      <dd><%= @event.start_time %></dd>
+      <dd><%= @event.start_time.to_date %></dd>
 
       <dt>End time</dt>
-      <dd><%= @event.end_time %></dd>
+      <dd><%= @event.end_time.to_date %></dd>
 
-      <dt>Resourceid</dt>
-      <dd><%= @event.resourceId %></dd>
+      <dt>Apartment</dt>
+      <dd><%= @event.apartment.apartment_name %></dd>
 
     </dl>
 
